@@ -13,5 +13,6 @@ public interface BandRepository extends JpaRepository<band_entity, Integer> {
 
     @Override
     Page<band_entity> findAll(Pageable pageable);
+
 }
 

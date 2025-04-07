@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "f8b153f3-0cce-4c43-9174-88f3e62b2e3a",
+		"name": "WEB3_Ticketer API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Band - Get by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/BandCRUD/1",
+					"host": ["{{base_url}}"],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"BandCRUD",
+						"1"
+					]
+				}
+			}
+		},
+		{
+			"name": "Band - Create",
+			"request": {
+				"method": "POST",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bandName\": \"The Example Band\",\n  \"genreId\": 1,\n  \"description\": \"A test band\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/BandCRUD",
+					"host": ["{{base_url}}"],
+					"path": ["api_rest", "v1", "WEB3_Ticketer", "BandCRUD"]
+				}
+			}
+		},
+		{
+			"name": "Band - Update",
+			"request": {
+				"method": "PUT",
+				"header": [{ "key": "Content-Type", "value": "application/json" }],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bandId\": 1,\n  \"bandName\": \"The Updated Band\",\n  \"genreId\": 1,\n  \"description\": \"Updated description\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/BandCRUD/1",
+					"host": ["{{base_url}}"],
+					"path": ["api_rest", "v1", "WEB3_Ticketer", "BandCRUD", "1"]
+				}
+			}
+		},
+		{
+			"name": "Band - Delete",
+			"request": {
+				"method": "DELETE",
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/BandCRUD/1",
+					"host": ["{{base_url}}"],
+					"path": ["api_rest", "v1", "WEB3_Ticketer", "BandCRUD", "1"]
+				}
+			}
+		},
+		{
+			"name": "Band - Search by Name",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/BandCRUD/search?name=example",
+					"host": ["{{base_url}}"],
+					"path": ["api_rest", "v1", "WEB3_Ticketer", "BandCRUD", "search"],
+					"query": [{ "key": "name", "value": "example" }]
+				}
+			}
+		},
+		{
+			"name": "Get All Bands (Paginated)",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/bands?page=0&size=5&sort=bandName,asc",
+					"host": ["{{base_url}}"],
+					"path": ["api_rest", "v1", "WEB3_Ticketer", "bands"],
+					"query": [
+						{ "key": "page", "value": "0" },
+						{ "key": "size", "value": "5" },
+						{ "key": "sort", "value": "bandName,asc" }
+					]
+				}
+			}
+		},
+		{
+			"name": "Get All Music Genres",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/music-genres",
+					"host": ["{{base_url}}"],
+					"path": ["api_rest", "v1", "WEB3_Ticketer", "music-genres"]
+				}
+			}
+		},
+		{
+			"name": "Get All Tickets",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/tickets",
+					"host": ["{{base_url}}"],
+					"path": ["api_rest", "v1", "WEB3_Ticketer", "tickets"]
+				}
+			}
+		},
+		{
+			"name": "Get All Stadiums",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/stadiums",
+					"host": ["{{base_url}}"],
+					"path": ["api_rest", "v1", "WEB3_Ticketer", "stadiums"]
+				}
+			}
+		},
+		{
+			"name": "Get All Cities",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/cities",
+					"host": ["{{base_url}}"],
+					"path": ["api_rest", "v1", "WEB3_Ticketer", "cities"]
+				}
+			}
+		},
+		{
+			"name": "Get All Countries",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/countries",
+					"host": ["{{base_url}}"],
+					"path": ["api_rest", "v1", "WEB3_Ticketer", "countries"]
+				}
+			}
+		},
+		{
+			"name": "Get All Ticket Categories",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/ticket-categories",
+					"host": ["{{base_url}}"],
+					"path": ["api_rest", "v1", "WEB3_Ticketer", "ticket-categories"]
+				}
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080"
+		}
+	]
+}
