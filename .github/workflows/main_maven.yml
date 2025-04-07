@@ -7,8 +7,12 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./tickets
+
     permissions:
       contents: read
       packages: write
@@ -22,9 +26,8 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Compilar con Maven
+      - name: Compilar con Maven (Clean and Install)
         run: mvn clean install
-        working-directory: ./tickets
 
       - name: Perform Security Scan
         uses: ShiftLeftSecurity/scan-action@master
