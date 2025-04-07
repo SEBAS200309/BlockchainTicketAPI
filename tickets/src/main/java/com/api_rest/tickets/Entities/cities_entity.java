@@ -18,7 +18,7 @@ public class cities_entity {
     @JsonProperty("city_name")
     @NotBlank(message = "City name is required")
     @Size(min = 3, max = 100, message = "City name must be between 3 and 100 characters")
-    private String Name;
+    private String city_name;
 
     @JsonProperty("country_id")
     @ManyToOne(fetch = FetchType.LAZY)

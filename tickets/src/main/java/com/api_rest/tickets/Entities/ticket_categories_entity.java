@@ -22,7 +22,7 @@ public class ticket_categories_entity {
     @JsonProperty("category_name")
     @NotBlank(message = "Ticket Category name is required")
     @Size(min = 3, max = 100, message = "Ticket Category name must be between 3 and 100 characters")
-    private String Name;
+    private String category_name;
 
     @NotBlank(message = "Base price is required")
     @Digits(integer = 8, fraction = 2, message = "The price must have up to 8 whole digits and 2 decimal places")

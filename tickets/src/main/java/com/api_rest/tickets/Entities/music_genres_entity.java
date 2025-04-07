@@ -20,6 +20,6 @@ public class music_genres_entity {
     @JsonProperty("genre_name")
     @NotBlank(message = "Music gender name is required")
     @Size(min = 3, max = 100, message = "Music gender name must be between 3 and 100 characters")
-    private String Name;
+    private String genre_name;
 
 }

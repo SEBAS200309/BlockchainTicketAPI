@@ -18,7 +18,7 @@ public class stadiums_entity {
     @JsonProperty("stadium_name")
     @NotBlank(message = "Stadium name is required")
     @Size(min = 3, max = 100, message = "Stadium name must be between 3 and 100 characters")
-    private String Name;
+    private String stadium_name;
 
     @JsonProperty("city_id")
     @ManyToOne(fetch = FetchType.LAZY)

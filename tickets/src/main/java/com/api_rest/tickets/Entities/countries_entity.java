@@ -20,5 +20,5 @@ public class countries_entity {
     @JsonProperty("country_name")
     @NotBlank(message = "Country name is required")
     @Size(min = 4, max = 100, message = "Country name must be between 3 and 100 characters")
-    private String Name;
+    private String country_name;
 }
