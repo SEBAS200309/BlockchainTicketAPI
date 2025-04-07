@@ -9,8 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StadiumsRepository extends JpaRepository<stadiums_entity, Integer> {
 
-    Page<stadiums_entity> findAllByNameContaining(String name, Pageable pageable);
-
     @Override
     Page<stadiums_entity> findAll(Pageable pageable);
 }

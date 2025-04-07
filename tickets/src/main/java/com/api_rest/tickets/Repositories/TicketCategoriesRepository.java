@@ -9,8 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TicketCategoriesRepository extends JpaRepository<ticket_categories_entity, Integer> {
 
-    Page<ticket_categories_entity> findAllByNameContaining(String name, Pageable pageable);
-
     @Override
     Page<ticket_categories_entity> findAll(Pageable pageable);
 }

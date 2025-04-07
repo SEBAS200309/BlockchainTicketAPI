@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CountriesRepository extends JpaRepository<countries_entity, Integer> {
 
-    Page<countries_entity> findAllByNameContaining(String name, Pageable pageable);
 
     @Override
     Page<countries_entity> findAll(Pageable pageable);

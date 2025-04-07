@@ -9,8 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MusicGenresRepository extends JpaRepository<music_genres_entity, Integer> {
 
-    Page<music_genres_entity> findAllByNameContaining(String name, Pageable pageable);
-
     @Override
     Page<music_genres_entity> findAll(Pageable pageable);
 }

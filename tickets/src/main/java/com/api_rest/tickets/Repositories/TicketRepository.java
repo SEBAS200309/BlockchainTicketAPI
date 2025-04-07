@@ -12,8 +12,6 @@ import java.util.UUID;
 @Repository
 public interface TicketRepository extends JpaRepository<tickets_entity, Integer> {
 
-    Page<tickets_entity> findAllByNameContaining(String name, Pageable pageable);
-
     @Override
     Page<tickets_entity> findAll(Pageable pageable);
 }
