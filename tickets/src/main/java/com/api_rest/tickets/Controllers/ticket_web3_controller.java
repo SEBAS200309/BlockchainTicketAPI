@@ -19,6 +19,7 @@ public class ticket_web3_controller {
 
     @Autowired
     private GettAllServices getallservices;
+
     //Manejo de errores
     private ResponseEntity<?> handleRequest(Supplier<Page<?>> supplier) {
         try {
