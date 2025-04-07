@@ -28,7 +28,7 @@ public class ticket_web3_controller {
             return ResponseEntity.badRequest().body("Error: " + e.getMessage());
         }
     }
-    //metodo para crear el paginado
+    //Metodo para crear el paginado
     private Pageable buildPageable(int page, int size, String sort) {
         String[] sortParams = sort.split(",");
         if (sortParams.length != 2) {
