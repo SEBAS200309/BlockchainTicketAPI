@@ -44,8 +44,8 @@ jobs:
       - name: Upload JAR file
         uses: actions/upload-artifact@v4
         with:
-          name: spring-boot-tickets.jar
-          path: target/spring-boot-tickets.jar
+          name: springboot-tickets-api.jar
+          path: target/springboot-tickets-api.jar
 
       - name: List target directory contents
         run: ls -l target
