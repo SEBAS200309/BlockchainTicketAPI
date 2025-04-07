@@ -45,7 +45,7 @@ public class ticket_web3_controller {
     public ResponseEntity<?> getAllBands(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "5") int size,
-            @RequestParam(defaultValue = "band_name,asc") String sort) {
+            @RequestParam(defaultValue = "bandName,asc") String sort) {
         Pageable pageable = buildPageable(page, size, sort);
         return handleRequest(() -> getallservices.getAllBands(pageable));
     }
@@ -54,7 +54,7 @@ public class ticket_web3_controller {
     public ResponseEntity<?> getAllMusicGenres(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "5") int size,
-            @RequestParam(defaultValue = "genre_name,asc") String sort) {
+            @RequestParam(defaultValue = "genreName,asc") String sort) {
         Pageable pageable = buildPageable(page, size, sort);
         return handleRequest(() -> getallservices.getAllMusicGenres(pageable));
     }
@@ -63,7 +63,7 @@ public class ticket_web3_controller {
     public ResponseEntity<?> getAllTickets(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "5") int size,
-            @RequestParam(defaultValue = "event_date,asc") String sort) {
+            @RequestParam(defaultValue = "eventDate,asc") String sort) {
         Pageable pageable = buildPageable(page, size, sort);
         return handleRequest(() -> getallservices.getAllTickets(pageable));
     }
@@ -72,7 +72,7 @@ public class ticket_web3_controller {
     public ResponseEntity<?> getAllStadiums(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "5") int size,
-            @RequestParam(defaultValue = "stadium_name,asc") String sort) {
+            @RequestParam(defaultValue = "stadiumName,asc") String sort) {
         Pageable pageable = buildPageable(page, size, sort);
         return handleRequest(() -> getallservices.getAllStadiums(pageable));
     }
@@ -81,7 +81,7 @@ public class ticket_web3_controller {
     public ResponseEntity<?> getAllCities(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "5") int size,
-            @RequestParam(defaultValue = "city_name,asc") String sort) {
+            @RequestParam(defaultValue = "cityName,asc") String sort) {
         Pageable pageable = buildPageable(page, size, sort);
         return handleRequest(() -> getallservices.getAllCities(pageable));
     }
@@ -90,7 +90,7 @@ public class ticket_web3_controller {
     public ResponseEntity<?> getAllCountries(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "5") int size,
-            @RequestParam(defaultValue = "country_name,asc") String sort) {
+            @RequestParam(defaultValue = "countryName,asc") String sort) {
         Pageable pageable = buildPageable(page, size, sort);
         return handleRequest(() -> getallservices.getAllCountries(pageable));
     }
@@ -99,7 +99,7 @@ public class ticket_web3_controller {
     public ResponseEntity<?> getAllTicketCategories(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "5") int size,
-            @RequestParam(defaultValue = "category_name,asc") String sort) {
+            @RequestParam(defaultValue = "categoryName,asc") String sort) {
         Pageable pageable = buildPageable(page, size, sort);
         return handleRequest(() -> getallservices.getAllTicketCategories(pageable));
     }

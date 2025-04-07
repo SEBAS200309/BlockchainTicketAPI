@@ -29,7 +29,8 @@ public class tickets_entity {
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
     @NotBlank(message = "Event date is required")
-    private LocalDateTime event_date;
+    @Column (name = "event_date")
+    private LocalDateTime eventDate;
 
     @JsonProperty("category_id")
     @ManyToOne(fetch = FetchType.LAZY)

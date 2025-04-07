@@ -1,6 +1,8 @@
 package com.api_rest.tickets.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -11,7 +13,7 @@ import lombok.Data;
 @Entity
 @Table(name = "countries")
 @Data
-
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class countries_entity {
 
     @Id
@@ -20,5 +22,6 @@ public class countries_entity {
     @JsonProperty("country_name")
     @NotBlank(message = "Country name is required")
     @Size(min = 4, max = 100, message = "Country name must be between 3 and 100 characters")
-    private String country_name;
+    @Column(name = "name")
+    private String countryName;
 }
