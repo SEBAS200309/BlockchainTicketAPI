@@ -21,7 +21,7 @@ public class band_entity {
     @JsonProperty("band_name")
     @NotBlank(message = "Band name is required")
     @Size(min = 3, max = 100, message = "Band name must be between 3 and 100 characters")
-    @Column(name = "name")
+    @Column(name = "band_name", nullable = false)
     private String bandName;
 
     @JsonProperty("genre_id")
