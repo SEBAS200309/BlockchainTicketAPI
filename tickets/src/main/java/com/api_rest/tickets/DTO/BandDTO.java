@@ -17,5 +17,5 @@ public class BandDTO {
     @JsonProperty("genre_id")
     @NotNull(message = "Genre ID is required")
     private Integer genreId;
-    
+
 }

@@ -22,6 +22,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Compilar con Maven
+        run: mvn clean install
+        working-directory: ./tickets
+
       - name: Perform Security Scan
         uses: ShiftLeftSecurity/scan-action@master
         with:
