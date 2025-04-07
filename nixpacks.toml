@@ -1,5 +1,0 @@
-[build]
-# Indica el directorio de la aplicación
-app = "tickets"
-# O puedes definir un comando de build personalizado:
-command = "cd tickets && mvn clean package"
