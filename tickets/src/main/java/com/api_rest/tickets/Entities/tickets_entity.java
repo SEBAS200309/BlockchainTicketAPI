@@ -19,12 +19,12 @@ public class tickets_entity {
 
     @JsonProperty("band_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "band_id")
     private band_entity band_id;
 
     @JsonProperty("stadium_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "stadium_id")
     private stadiums_entity stadium_id;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
@@ -33,6 +33,6 @@ public class tickets_entity {
 
     @JsonProperty("category_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "category_id")
     private ticket_categories_entity category_id;
 }

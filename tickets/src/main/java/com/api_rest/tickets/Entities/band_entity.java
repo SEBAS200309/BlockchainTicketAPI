@@ -21,6 +21,6 @@ public class band_entity {
 
     @JsonProperty("genre_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "genre_id")
     private music_genres_entity genre_id;
 }

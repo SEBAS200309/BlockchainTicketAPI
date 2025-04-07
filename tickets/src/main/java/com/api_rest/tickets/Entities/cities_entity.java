@@ -22,7 +22,7 @@ public class cities_entity {
 
     @JsonProperty("country_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "country_id")
     private countries_entity country_id;
 
 }
