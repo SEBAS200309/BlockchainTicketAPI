@@ -27,6 +27,9 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Set up environment variables
+        run: echo "AIVEN_DB_PASSWORD=${{ secrets.AIVEN_DB_PASSWORD }}" >> $GITHUB_ENV
+
       - name: Compilar con Maven (Clean and Install)
         run: mvn clean install
 
