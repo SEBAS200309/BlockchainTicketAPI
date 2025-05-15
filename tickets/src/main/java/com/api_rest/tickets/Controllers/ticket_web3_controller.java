@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.function.Supplier;
 
+@CrossOrigin(origins = "*")  // o mejor: la URL de tu frontend
 @RestController
 @RequestMapping("/api_rest/v1/WEB3_Ticketer")
 @Validated
