@@ -42,8 +42,10 @@ public class BandCRUDController {
     }
     //Actualizar banda
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateBand (@PathVariable Integer id, @Valid @RequestBody band_entity band){
-        return bandcrudservice.updateBand(id,band);
+    public ResponseEntity<?> updateBand(
+            @PathVariable Integer id,
+            @Valid @RequestBody BandDTO bandDto) {
+        return bandcrudservice.updateBand(id, bandDto);
     }
     //Borrar banda
     @DeleteMapping("/{id}")
