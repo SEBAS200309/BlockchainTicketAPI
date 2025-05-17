@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "49bacb28-afc0-4337-a031-31ab1f8836ea",
+		"name": "WEB3_Ticketer API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42793032"
+	},
+	"item": [
+		{
+			"name": "Band - Get by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/BandCRUD/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"BandCRUD",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Band - Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"band_name\": \"The Example Band\",\n  \"genre_id\": 1,\n  \"description\": \"A test band\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/BandCRUD",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"BandCRUD"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Band - Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bandId\": 1,\n  \"bandName\": \"The Updated Band\",\n  \"genre_id\": 1,\n  \"description\": \"Updated description\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/BandCRUD/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"BandCRUD",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Band - Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/BandCRUD/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"BandCRUD",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Band - Search by Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/BandCRUD/search?name=Carlos Vives",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"BandCRUD",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Carlos Vives"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Bands (Paginated)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/bands?page=0&size=5&sort=bandName,asc",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"bands"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						},
+						{
+							"key": "sort",
+							"value": "bandName,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Music Genres",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/music-genres",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"music-genres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/tickets",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Stadiums",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/stadiums",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"stadiums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/cities",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Countries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/countries",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"countries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Ticket Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api_rest/v1/WEB3_Ticketer/ticket-categories",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api_rest",
+						"v1",
+						"WEB3_Ticketer",
+						"ticket-categories"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080"
+		}
+	]
+}

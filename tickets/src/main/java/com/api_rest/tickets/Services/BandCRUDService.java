@@ -66,34 +66,31 @@ public class BandCRUDService {
     }
 
     // Actualizar una banda existente
-    public ResponseEntity<?> updateBand(Integer id, band_entity bandToUpdate) {
-        Optional<band_entity> optionalBand = bandRepository.findById(id);
-        if (!optionalBand.isPresent()) {
+    public ResponseEntity<?> updateBand(Integer id, BandDTO dto) {
+        Optional<band_entity> optional = bandRepository.findById(id);
+        if (!optional.isPresent()) {
             return new ResponseEntity<>(
                     Collections.singletonMap("Status", String.format("Band with ID %d not found.", id)),
                     HttpStatus.NOT_FOUND);
         }
-        band_entity existingBand = optionalBand.get();
-        // Actualizar el nombre
-        existingBand.setBandName(bandToUpdate.getBandName());
 
-        // Si se envía un nuevo género, validarlo
-        if (bandToUpdate.getGenre_id() != null && bandToUpdate.getGenre_id().getId() != null) {
-            Integer genreId = bandToUpdate.getGenre_id().getId();
-            Optional<music_genres_entity> optionalGenre = musicGenresRepository.findById(genreId);
-            if (!optionalGenre.isPresent()) {
-                return new ResponseEntity<>(
-                        Collections.singletonMap("Status", String.format("Genre with ID %d not found.", genreId)),
-                        HttpStatus.NOT_FOUND);
-            }
-            existingBand.setGenre_id(optionalGenre.get());
+        band_entity existing = optional.get();
+        existing.setBandName(dto.getBandName());
+
+        // Validar género
+        Optional<music_genres_entity> optGenre = musicGenresRepository.findById(dto.getGenreId());
+        if (!optGenre.isPresent()) {
+            return new ResponseEntity<>(
+                    Collections.singletonMap("Status", String.format("Genre with ID %d not found.", dto.getGenreId())),
+                    HttpStatus.NOT_FOUND);
         }
-        band_entity bandUpdated = bandRepository.save(existingBand);
-        // Crear respuesta del metodo
-        Map<String, Object> response = new HashMap<>();
-        response.put("Status", String.format("Added Band with ID %d", bandUpdated.getId()));
-        response.put("band", bandUpdated);
-        return ResponseEntity.ok(response);
+        existing.setGenre_id(optGenre.get());
+
+        band_entity updated = bandRepository.save(existing);
+        Map<String, Object> resp = new HashMap<>();
+        resp.put("Status", String.format("Updated Band with ID %d", updated.getId()));
+        resp.put("band", updated);
+        return ResponseEntity.ok(resp);
     }
 
     // Eliminar una banda por ID
