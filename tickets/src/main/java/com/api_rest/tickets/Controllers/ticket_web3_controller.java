@@ -45,7 +45,7 @@ public class ticket_web3_controller {
     @GetMapping("/bands")
     public ResponseEntity<?> getAllBands(
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "5") int size,
+            @RequestParam(defaultValue = "20") int size,
             @RequestParam(defaultValue = "bandName,asc") String sort) {
         Pageable pageable = buildPageable(page, size, sort);
         return handleRequest(() -> getallservices.getAllBands(pageable));
