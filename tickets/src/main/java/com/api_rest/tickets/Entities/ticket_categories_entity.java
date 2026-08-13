@@ -11,7 +11,8 @@ import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import java.math.BigDecimal;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -20,6 +21,7 @@ import java.math.BigDecimal;
 @Data
 public class ticket_categories_entity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @JsonProperty("category_name")
